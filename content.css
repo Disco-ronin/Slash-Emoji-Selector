@@ -1,0 +1,134 @@
+#slash-emoji-picker {
+  position: fixed;
+  z-index: 2147483647;
+  width: 352px;
+  max-height: 420px;
+  background: #1e1e2e;
+  border: 1px solid #45475a;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: sep-in 0.12s ease-out;
+}
+
+@keyframes sep-in {
+  from { opacity: 0; transform: translateY(6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.sep-search-wrap {
+  padding: 8px 8px 0;
+}
+
+.sep-search {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #45475a;
+  border-radius: 8px;
+  background: #181825;
+  color: #cdd6f4;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.sep-search::placeholder {
+  color: #6c7086;
+}
+
+.sep-search:focus {
+  border-color: #89b4fa;
+}
+
+.sep-categories {
+  display: flex;
+  gap: 2px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #313244;
+}
+
+.sep-cat-btn {
+  flex: 1;
+  padding: 5px 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.1s;
+  line-height: 1;
+}
+
+.sep-cat-btn:hover {
+  background: #313244;
+}
+
+.sep-cat-btn.sep-active {
+  background: #45475a;
+}
+
+.sep-grid-wrap {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 8px 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #45475a transparent;
+}
+
+.sep-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2px;
+}
+
+.sep-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.08s;
+  padding: 0;
+}
+
+.sep-emoji:hover,
+.sep-emoji.sep-selected {
+  background: #45475a;
+}
+
+.sep-emoji.sep-selected {
+  box-shadow: inset 0 0 0 2px #89b4fa;
+}
+
+.sep-empty {
+  text-align: center;
+  color: #6c7086;
+  font-size: 13px;
+  padding: 24px 0;
+}
+
+.sep-hint {
+  padding: 6px 12px;
+  border-top: 1px solid #313244;
+  color: #6c7086;
+  font-size: 11px;
+  display: flex;
+  gap: 12px;
+}
+
+.sep-hint kbd {
+  background: #313244;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-family: inherit;
+  color: #a6adc8;
+}

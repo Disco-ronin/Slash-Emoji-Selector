@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Slash Emoji Picker",
+  "version": "1.0",
+  "description": "Type / to open an emoji picker in any text field. Search by emotion, navigate with keyboard, insert emojis without lifting your hands off the keyboard.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "slash-emoji-picker@extension.dev",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "icons": {
+    "48": "icons/icon-48.svg",
+    "96": "icons/icon-96.svg"
+  },
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
